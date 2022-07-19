@@ -1,5 +1,4 @@
 line-bot-sdk 
-bs4 
 flask 
 pymongo 
 datetime 
