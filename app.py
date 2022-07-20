@@ -81,7 +81,7 @@ def handle_message(event):
         "action": {
           "type": "uri",
           "label": "CALL",
-          "uri": "https://0c04-2001-b400-e75a-a7d4-7597-87e1-857-19be.jp.ngrok.iohttps://linecorp.com"
+          "uri": "https://0c04-2001-b400-e75a-a7d4-7597-87e1-857-19be.jp.ngrok.io"
         }
       }
     ],
@@ -89,7 +89,7 @@ def handle_message(event):
   }
 }
         )
-        line_bot_api.reply_message(event.reply_token,message)
+        line_bot_api.reply_message(event.reply_token,flex_message)
     else:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
 
