@@ -63,7 +63,7 @@ def handle_message(event):
     "contents": [
       {
         "type": "text",
-        "text": "連線",
+        "text": "進入會議",
         "weight": "bold",
         "size": "xl"
       }
@@ -80,8 +80,8 @@ def handle_message(event):
         "height": "sm",
         "action": {
           "type": "uri",
-          "label": "CALL",
-          "uri": "https://0c04-2001-b400-e75a-a7d4-7597-87e1-857-19be.jp.ngrok.io"
+          "label": "連接",
+          "uri": "https://liff.line.me/1657316207-75q3g6Ly"
         }
       }
     ],
