@@ -81,7 +81,7 @@ def handle_message(event):
         "action": {
           "type": "uri",
           "label": "連接",
-          "uri": "https://liff.line.me/1657316207-LJb1D9kx"
+          "uri": "https://liff.line.me/1657316207-59lA8K9D"
         }
       }
     ],
