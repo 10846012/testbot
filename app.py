@@ -1,3 +1,4 @@
+from cgitb import text
 from flask import Flask, request, abort
 
 from linebot import (
@@ -38,8 +39,58 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    message = TextSendMessage(text=event.message.text)
-    line_bot_api.reply_message(event.reply_token,message)
+    message = text=event.message.text
+    if(message == '連接'):
+        flex_message = FlexSendMessage(
+            alt_text='連接點選',
+            contents={
+  "type": "bubble",
+  "hero": {
+    "type": "image",
+    "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "size": "full",
+    "aspectRatio": "20:13",
+    "aspectMode": "cover",
+    "action": {
+      "type": "uri",
+      "uri": "http://linecorp.com/"
+    }
+  },
+  "body": {
+    "type": "box",
+    "layout": "vertical",
+    "contents": [
+      {
+        "type": "text",
+        "text": "連線",
+        "weight": "bold",
+        "size": "xl"
+      }
+    ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "CALL",
+          "uri": "https://0c04-2001-b400-e75a-a7d4-7597-87e1-857-19be.jp.ngrok.iohttps://linecorp.com"
+        }
+      }
+    ],
+    "flex": 0
+  }
+}
+        )
+        line_bot_api.reply_message(event.reply_token,message)
+    else:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(message))
 
 import os
 if __name__ == "__main__":
